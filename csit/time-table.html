@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        * {
+            font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        table {
+            /* width: 1500px; */
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: block;
+            border-radius: 10px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .day {
+            background-color: #55608f;
+        }
+
+        thead th {
+            background-color: #55608f;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        tbody td {
+            position: relative;
+        }
+
+        tbody td:hover::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+        }
+
+        @media only screen and (max-width: 1200px) {
+
+            body {
+                display: initial;
+                background-color: #444655;
+                background-image: initial;
+            }
+
+            table {
+                margin: 10px;
+                border-collapse: initial;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                display: block;
+                overflow: auto;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            tbody tr:hover {
+                background-color: initial;
+            }
+
+            tbody td {
+                position: initial;
+            }
+
+            tbody td:hover::before {
+                content: initial;
+                position: initial;
+                background-color: rgba(255, 255, 255, 0.2);
+                z-index: initial;
+                display: initial;
+            }
+
+            .day {
+                position: absolute;
+                width: 25px;
+                left: 10px;
+                top: auto;
+            }
+
+            .container {
+                margin-left: 50px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-image: linear-gradient(45deg, #00aeff, #a68eff);
+            border-radius: 10px;
+            -webkit-box-shadow: rgba(0, 0, 0, .12) 0 3px 13px 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="day"> &nbsp;</th>
+                    <th>9:00 - 9:55</th>
+                    <th>9:55 - 10:50</th>
+                    <th>11:10 - 12:05</th>
+                    <th>12:05 - 1:00</th>
+                    <th>1:00 - 1:55</th>
+                    <th>1:55 - 2:50</th>
+                    <th>3:10 - 4:05</th>
+                    <th>4:05 - 5:00</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="day">Mon</td>
+                    <td>web-dev lab2</td>
+                    <td>web-dev lab2</td>
+                    <td>ai lab2</td>
+                    <td>ai lab2</td>
+                    <td>lunch</td>
+                    <td>network</td>
+                    <td>cec</td>
+                    <td>cec</td>
+                </tr>
+                <tr>
+                    <td class="day">Tue</td>
+                    <td>compiler design</td>
+                    <td>xcs-quant</td>
+                    <td>AI-lt5</td>
+                    <td>lib</td>
+                    <td>lunch</td>
+                    <td>web-dev</td>
+                    <td>cec</td>
+                    <td>cec</td>
+                </tr>
+                <tr>
+                    <td class="day">Wed</td>
+                    <td>compiler design</td>
+                    <td>xcs-verbal</td>
+                    <td>computer network</td>
+                    <td>xcs-soft skill</td>
+                    <td>lunch</td>
+                    <td>software engg.</td>
+                    <td>cec</td>
+                    <td>cec</td>
+                </tr>
+                <tr>
+                    <td class="day">Thr</td>
+                    <td>AI</td>
+                    <td>Compiler design</td>
+                    <td>training lab1</td>
+                    <td>training lab1</td>
+                    <td>lunch</td>
+                    <td>computer network</td>
+                    <td>cec</td>
+                    <td>cec</td>
+                </tr>
+                <tr>
+                    <td class="day">Fir</td>
+                    <td>AI</td>
+                    <td>AI</td>
+                    <td>compiler design lab</td>
+                    <td>compiler design lab</td>
+                    <td>lunch</td>
+                    <td>web-dev</td>
+                    <td>cec</td>
+                    <td>cec</td>
+                </tr>
+                <tr>
+                    <td class="day">Sat</td>
+                    <td>training lab1</td>
+                    <td>training lab1</td>
+                    <td>training lab1</td>
+                    <td>training lab1</td>
+                    <td>lunch</td>
+                    <td>training lab1</td>
+                    <td>training lab1</td>
+                    <td>training lab1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

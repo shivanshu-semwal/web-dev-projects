@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Datesheet</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      font-family: 'Poppins', sans-serif;
+      margin: 20px;
+    }
+
+    td,
+    th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    #myInput {
+      /* background-image: url('/css/searchicon.png'); */
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      /* width: 100%; */
+      flex: 1 0 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="myInput" onkeyup="searchh()" placeholder="Search for section.." title="Type in a section">
+  <table id="myTable">
+    <tr>
+      <th> Practical Exam Name </th>
+      <th> Internal Faculty Member Name </th>
+      <th> Date </th>
+      <th> Branch & Section </th>
+      <th> Roll No </th>
+      <th> Time </th>
+      <th> Venue </th>
+    </tr>
+    <tr>
+      <td rowspan="29"> Compiler Design Lab (PCS-601) </td>
+      <td rowspan="2"> Mr. Ankit Tomar Mr. Vikas Tomar </td>
+      <td rowspan="2"> 17/06/2022 </td>
+      <td> CSE-A </td>
+      <td> 1-32 </td>
+      <td> 9:00am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-A </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Ankit Tomar Dr. Surender Singh Samant </td>
+      <td rowspan="2"> 18/06/2022 </td>
+      <td> CSE-B </td>
+      <td> 1-31 </td>
+      <td> 9:00am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-B </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Ankit Tomar Dr. Narayan Chaturvedi </td>
+      <td rowspan="2"> 20/06/2022 </td>
+      <td> CSE-C </td>
+      <td> 1-32 </td>
+      <td> 11:00am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-C </td>
+      <td> 33+ </td>
+      <td> 01:00 pm Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Aditya Pai Mr. Ankit Gupta </td>
+      <td rowspan="2"> 21/06/2022 </td>
+      <td> CSE-D </td>
+      <td> 1-32 </td>
+      <td> 9:00am Onwards </td>
+      <td rowspan="2"> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-D </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Aditya Pai Mr. Ankit Gupta </td>
+      <td rowspan="2"> 22/06/2022 </td>
+      <td> CSE-E </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-E </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Aditya Pai Mr. Ankit Gupta </td>
+      <td rowspan="2"> 23/06/2022 </td>
+      <td> CSE-F </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-F </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Vishan Gupta Ms. Tanusha Mittal </td>
+      <td rowspan="2"> 24/06/2022 </td>
+      <td> CSE-G </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-G </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Vishan Gupta Ms. Tanusha Mittal </td>
+      <td rowspan="2"> 25/06/2022 </td>
+      <td> CSE-H </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-H </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td> Mr. Ankur Choudhary Mr. Piyush Aggarwal
+      </td>
+      <td> 17/06/2022 </td>
+      <td> CC+IS </td>
+      <td> All </td>
+      <td> 02:00 pm Onwards </td>
+      <td> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> Mr. Ankur Choudhary Mr. Piyush Aggarwal
+      </td>
+      <td> 18/06/2022 </td>
+      <td> CE+ Back Students(All) </td>
+      <td> All </td>
+      <td> 01:30 pm Onwards </td>
+      <td> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> Ms. Vishu Tyagi Mr. Sanjay Roka
+      </td>
+      <td> 16/06/2022 </td>
+      <td> CST </td>
+      <td> All </td>
+      <td> 9:00am Onwards </td>
+      <td> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Priyank Pandey Dr. Mahesh Kumar </td>
+      <td rowspan="2"> 17/06/2022 </td>
+      <td> CSE-D4 </td>
+      <td> 1-42 </td>
+      <td> 9:00am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-D4 </td>
+      <td> 43+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Ms. Vishu Tyagi Dr. Upma Jain </td>
+      <td rowspan="2"> 20/06/2022 </td>
+      <td> CSE-DS </td>
+      <td> 1-40 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-DS </td>
+      <td> 41+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Priyank Pandey Dr. Mahesh Kumar </td>
+      <td rowspan="2"> 18/06/2022 </td>
+      <td> CSE-ML </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-ML </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Priyank Pandey Dr. Mahesh Kumar </td>
+      <td rowspan="2"> 21/06/2022 </td>
+      <td> CSE-SE </td>
+      <td> 1-39 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-SE </td>
+      <td> 40+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Ms. Vishu Tyagi Dr. Upma Jain </td>
+      <td rowspan="2"> 17/06/2022 </td>
+      <td> IT </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-2 </td>
+    </tr>
+    <tr>
+      <td> IT </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="25"> Software Engineering Lab PCS-602 </td>
+      <td rowspan="2"> Dr. Jyoti Agarwal & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 18/06/2022 </td>
+      <td> CSE-A </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-A </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Surendra Kumar Shukla Dr. Prakash Srivastava </td>
+      <td rowspan="2"> 16/06/2022 </td>
+      <td> CSE-B </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-B </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Jyoti Agarwal & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 17/06/2022 </td>
+      <td> CSE-C </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-C </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Surendra Kumar Shukla Dr. Prakash Srivastava </td>
+      <td rowspan="2"> 18/06/2022 </td>
+      <td> CSE-D </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-D </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Surendra Kumar Shukla Dr. Prakash Srivastava </td>
+      <td rowspan="2"> 20/06/2022 </td>
+      <td> CSE-E </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-E </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Surendra Kumar Shukla Dr. Prakash Srivastava </td>
+      <td rowspan="2"> 21/06/2022 </td>
+      <td> CSE-F </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-F </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Saurabh Mishra Mr. Vidit Kumar </td>
+      <td rowspan="2"> 22/06/2022 </td>
+      <td> CSE-G </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-G </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Saurabh Mishra Mr. Vidit Kumar </td>
+      <td rowspan="2"> 21/06/2022 </td>
+      <td> CSE-H </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-H </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td> Dr. Akanksha Gupta Ms. Sarishma
+      </td>
+      <td> 18/06/2022 </td>
+      <td> CC+IS </td>
+      <td> All </td>
+      <td> 01:30 pm Onwards </td>
+      <td> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> Mr. Prabhdeep Singh Mr. Sanjay Roka
+      </td>
+      <td> 17/06/2022 </td>
+      <td> CE+ Back Students(All) </td>
+      <td> All </td>
+      <td> 01:00 pm Onwards </td>
+      <td> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td> Mr. Prabhdeep Singh Mr. Sanjay Roka
+      </td>
+      <td> 21/06/2022 </td>
+      <td> CST </td>
+      <td> All </td>
+      <td> 01:00 pm Onwards </td>
+      <td> Lab-5 </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Saurabh Mishra Mr. Vidit Kumar </td>
+      <td rowspan="2"> 16/06/2022 </td>
+      <td> CSE-D4 </td>
+      <td> 1-42 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-D4 </td>
+      <td> 43+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Prabhdeep Singh Mr. Shekhar Karnwal </td>
+      <td rowspan="2"> 22/06/2022 </td>
+      <td> CSE-DS </td>
+      <td> 1-40 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-DS </td>
+      <td> 41+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Dr. Akanksha Gupta Ms. Sarishma </td>
+      <td rowspan="2"> 25/06/2022 </td>
+      <td> CSE-ML </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-ML </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="29"> Web Development Lab (PCS-693) </td>
+      <td rowspan="2"> Mr. Yuvraj Joshi & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 16/06/2022 </td>
+      <td> CSE-A </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-A </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Yuvraj Joshi & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 17/06/2022 </td>
+      <td> CSE-B </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-B </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Yuvraj Joshi & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 18/06/2022 </td>
+      <td> CSE-C </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-C </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Ms. Parul Madan & Dr. Manoj Diwakar </td>
+      <td rowspan="2"> 20/06/2022 </td>
+      <td> CSE-D </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-D </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Ashwini Kumar & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 21/06/2022 </td>
+      <td> CSE-E </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-E </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Ashwini Kumar & Mr. Gagandeep Singh </td>
+      <td rowspan="2"> 22/06/2022 </td>
+      <td> CSE-F </td>
+      <td> 1-32 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-F </td>
+      <td> 33+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Ms. Parul Madan & Dr. Manoj Diwakar </td>
+      <td rowspan="2"> 25/06/2022 </td>
+      <td> CSE-G </td>
+      <td> 1-31 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-G </td>
+      <td> 32+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Ashwini Kumar & Mr. Gagandeep Singh </td>
+      <td rowspan="2"> 24/06/202 </td>
+      <td> CSE-H </td>
+      <td> 1-31 </td>
+      <td> 11:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-H </td>
+      <td> 32+ </td>
+      <td> 01:00 pm Onwards </td>
+    </tr>
+    <tr>
+      <td> Mr. Sanjeev Kukreti & Dr. Noor Mohd
+      </td>
+      <td> 16/06/2022 </td>
+      <td> CC+IS </td>
+      <td> All </td>
+      <td> 1:00 pm Onwards </td>
+      <td> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> Mr. Yuvraj Joshi & Dr. Priya Matta &
+        Mr. Gagandeep Singh
+      </td>
+      <td> 20/06/2022 </td>
+      <td> CE </td>
+      <td> All </td>
+      <td> 01:30 pm Onwards </td>
+      <td> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> Mr. Pranav More & Dr. Noor Mohd
+      </td>
+      <td> 17/06/2022 </td>
+      <td> CST+ Back Students(All) </td>
+      <td> All </td>
+      <td> 9:00 am Onwards </td>
+      <td> New Lab-2 </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Manish Sharma & Ms. Parul Madan </td>
+      <td rowspan="2"> 22/06/2022 </td>
+      <td> CSE-D4 </td>
+      <td> 1-42 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-D4 </td>
+      <td> 43+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Sanjeev Kukreti & Dr. Prakash Srivastava </td>
+      <td rowspan="2"> 21/06/2022 </td>
+      <td> CSE-DS </td>
+      <td> 1-40 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-DS </td>
+      <td> 41+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Sanjeev Kukreti & Dr. Prakash Srivastava </td>
+      <td rowspan="2"> 20/06/2022 </td>
+      <td> CSE-ML </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-ML </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Pranav More & Dr. Priya Matta </td>
+      <td rowspan="2"> 20/06/2022 </td>
+      <td> CSE-SE </td>
+      <td> 1-39 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-1 </td>
+    </tr>
+    <tr>
+      <td> CSE-SE </td>
+      <td> 40+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Mr. Pranav More & Dr. Noor Mohd </td>
+      <td rowspan="2"> 18/06/2022 </td>
+      <td> IT </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-1 </td>
+    </tr>
+    <tr>
+      <td> IT </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="4"> Artificial Intelligence Lab PCS-632 </td>
+      <td rowspan="4"> Mr. Vikas Tomar Dr. Sumit Pundir </td>
+      <td rowspan="2"> 24/06/2022 </td>
+      <td> CSE-ML </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-5 </td>
+    </tr>
+    <tr>
+      <td> CSE-ML </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> 23/06/2022 </td>
+      <td> CSE-DS </td>
+      <td> 1-40 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> CSE-DS+ Back Students(All) </td>
+      <td> 41+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td> Devops on Cloud Lab (CC Only) PCS-651 </td>
+      <td> Dr. Vijay Singh </td>
+      <td> 21/06/2022 </td>
+      <td> (CC Only) + Back Students(All) </td>
+      <td> All </td>
+      <td> 01:00 pm Onwards </td>
+      <td> Lab-7 </td>
+    </tr>
+    <tr>
+      <td> Network and System Security Lab (IS Only) PCS-619
+      </td>
+      <td> Dr. Mohammad Wazid </td>
+      <td> 21/06/2022 </td>
+      <td> (IS Only) + Back Students(All) </td>
+      <td> All </td>
+      <td> 9:00 am Onwards </td>
+      <td> Lab-4 </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Image Processing and Computer Vision Lab PCS-691 </td>
+      <td rowspan="2"> Dr. Manoj Diwakar & Mr. Arnav Kotiyal </td>
+      <td rowspan="2"> 22/06/2022 </td>
+      <td> IT </td>
+      <td> 1-45 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> New Lab-2 </td>
+    </tr>
+    <tr>
+      <td> IT+ Back Students(All) </td>
+      <td> 46+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+    <tr>
+      <td rowspan="2"> Software Verification, Validation and Testing Lab (PIT-607) </td>
+      <td rowspan="2"> Dr. Sharon Christa & Dr. Akanksha Gupta </td>
+      <td rowspan="2"> 16/06/2022 </td>
+      <td> CSE-SE </td>
+      <td> 1-39 </td>
+      <td> 9:00 am Onwards </td>
+      <td rowspan="2"> Lab-2 </td>
+    </tr>
+    <tr>
+      <td> CSE-SE+ Back Students(All) </td>
+      <td> 40+ </td>
+      <td> 12:00 noon Onwards </td>
+    </tr>
+  </table>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+  <script>
+    function split_rows(tbl_param) {
+      var tbl = $(tbl_param);
+      var tempTable = tbl.clone(true);
+      var tableBody = $(tempTable).children();
+      $(tableBody).children().each(function (index, item) {
+        var currentRow = item;
+        $(currentRow).children().each(function (index1, item1) {
+          var rows = $(item1).attr("rowspan");
+          if (rows >= 2) {
+            // copy the cell
+            var item2 = $(item1).clone(true);
+            // Remove rowspan
+            $(item1).removeAttr("rowspan");
+            $(item2).attr("rowspan", (rows) - 1);
+            // console.log("item1:", $(item1).text(), ", index:", index1);
+            // last item's index in next row
+            var indexOfLastElement = $(currentRow).next().children().last().index();
+            if (indexOfLastElement < index1) {
+              $(currentRow).next().append(item2)
+            }
+            else {
+              // intermediate cell insertion
+              $(item2).insertBefore($(currentRow).next().children().eq(index1));
+            }
+          }
+        });
+
+      });
+      return tempTable;
+    }
+    function split_cols(tbl_param) {
+      var tbl = $(tbl_param);
+      var tempTable = tbl.clone(true);
+      var tableBody = $(tempTable).children();
+      $(tableBody).children().each(function (index, item) {
+        var currentRow = item;
+        for (var i = 0; i < $(currentRow).children().length; i++) {
+          var item1 = $(currentRow).children().eq(i);
+          var cols = $(item1).attr("colspan");
+          if (cols >= 2) {
+            // copy the cell
+            var item2 = $(item1).clone(true);
+
+            // Remove rowspan
+            $(item1).removeAttr("colspan");
+            $(item2).attr("colspan", cols - 1);
+            // last item's index in next row
+            $(item2).insertAfter(item1);
+          }
+
+        }
+
+      });
+      return tempTable;
+    }
+    var formatTable = split_rows($("#myTable"));
+    $('body').append(formatTable);
+    $("#myTable").remove();
+    function searchh() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filters = input.value.split(' ').map((i) => i.toUpperCase());
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[3];
+        td2 = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          txtValue += td2.textContent || td2.innerText;
+          // console.log(txtValue);
+          flag = true;
+          filters.forEach(function (filter) {
+            // console.log(filters);
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              // tr[i].style.display = "";
+              flag = flag && true;
+            } else {
+              // tr[i].style.display = "none";
+              flag = false;
+            }
+          });
+          if (flag) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

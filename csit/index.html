@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>CSIT</title>
+    <style>
+        * {
+            font-family: "Roboto", sans-serif;
+        }
+
+        :root {
+            --color-grey: #5f6f72;
+            --color-grey-medium: #364346;
+            --color-grey-dark: #293538;
+            --color-orange: #fd6722;
+            --color-white: #fff;
+            --color-white-dark: #eee;
+        }
+
+        body {
+            background: var(--color-grey);
+        }
+
+        .heading {
+            font-weight: 400;
+            text-align: center;
+            background: var(--color-grey-dark);
+            margin: 0;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .wrapper {
+            padding: 20px 10px;
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        .file-browser {
+            background: var(--color-grey-medium);
+            color: white;
+            padding: 20px 10px;
+        }
+
+        .file {
+            color: var(--color-white-dark);
+            display: block;
+            list-style: none;
+        }
+
+        .folder>ul {
+            display: none;
+        }
+
+        .folder:before {
+            padding: 5px;
+            height: 10px;
+            width: 10px;
+            text-align: center;
+            line-height: 10px;
+            background: var(--color-grey);
+            border-radius: 1px;
+            display: inline-block;
+            content: '+';
+        }
+
+        .folder.folder-open>ul {
+            display: block;
+            padding-left: 15px;
+            margin-left: 9px;
+            border-left: 2px solid var(--color-grey);
+        }
+
+        .folder.folder-open:before {
+            content: '-';
+        }
+
+        .folder {
+            list-style: none;
+            cursor: pointer;
+            margin: 4px 0;
+        }
+
+        a:link {
+            color: #BEFBFF;
+        }
+
+        a:visited {
+            color: #7ECB90;
+        }
+
+        a:hover {
+            color: #B3E481;
+        }
+
+        a:active {
+            color: #FFE9D1;
+        }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h3 class="heading">CSIT-Home</h3>
+        <div class="file-browser">
+            <ul>
+                <li class="folder folder-open">
+                    Active
+                    <ul>
+                        <li class="file"><a href="./practical.html">Date sheet practical</a></li>
+                        <li class="file"><a href="./time-table.html">Time table</a></li>
+                    </ul>
+                </li>
+                <li class="folder">
+                    Archived
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            $(function () {
+                $('.folder').on('click', function (e) {
+                    $(this).toggleClass('folder-open');
+                    e.stopPropagation();
+                });
+
+                $('.file').on('click', function (e) {
+                    e.stopPropagation();
+                });
+            })
+        </script>
+</body>
+
+</html>
